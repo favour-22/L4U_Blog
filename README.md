@@ -1,8 +1,4 @@
- **L4U\_Blog** project.
 
----
-
-````markdown
 # L4U_Blog
 
 **L4U_Blog** is a multi-user blogging platform built for developers and community members to create, share, and discover articles. Designed as a full-stack capstone project, it incorporates modern web development practices along with AI-assisted development tools and workflows.
@@ -114,15 +110,17 @@ L4U_Blog leverages AI tools across the development lifecycle:
 
 ## 🧠 Prompting Strategy
 
+
 ### Feature Example
-```bash
-"Generate a Next.js API route handler for /api/createPost that accepts title and content, validates them, and inserts a new row into the Supabase posts table."
-````
+
+```text
+Generate a Next.js API route handler for /api/createPost that accepts title and content, validates them, and inserts a new row into the Supabase posts table.
+```
 
 ### Test Example
 
-```bash
-"Write a Jest test suite for the loginUser function, covering successful login, incorrect password, and missing fields errors. Mock Supabase Auth calls."
+```text
+Write a Jest test suite for the loginUser function, covering successful login, incorrect password, and missing fields errors. Mock Supabase Auth calls.
 ```
 
 > By including specific function names, fields, and framework context, we ensure highly relevant AI-generated code and tests.
@@ -139,27 +137,23 @@ L4U_Blog leverages AI tools across the development lifecycle:
 
 ---
 
+
 ## 📂 Repository
 
-> 🔗 GitHub Repo: [https://github.com/favour-22/L4U\_Blog](https://github.com/favour-22/L4U_Blog)
+🔗 GitHub Repo: [https://github.com/favour-22/L4U_Blog](https://github.com/favour-22/L4U_Blog)
 
 ---
+
 
 ## 🙏 Support the Project
 
-If you find L4U\_Blog useful or inspiring, consider [sponsoring me on GitHub](https://github.com/sponsors/favour-22) to help sustain future open-source work. Your support makes a big difference!
+If you find L4U_Blog useful or inspiring, consider [sponsoring me on GitHub](https://github.com/sponsors/favour-22) to help sustain future open-source work. Your support makes a big difference!
 
 ---
+
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-
-## 📞 Contact
-
-Feel free to reach out or contribute via issues and pull requests on the GitHub repo.
-
----
-```
