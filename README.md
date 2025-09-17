@@ -1,78 +1,165 @@
-# L4U_Blog
-
-## What is L4U_Blog?
-
-**L4U_Blog** is a modern, multi-user blogging platform designed for developers and community members to create, share, and discover articles. The platform supports Markdown editing, image uploads (including AI-generated images), dark/light mode, and social sharing. AI features powered by Gemini help with summaries, SEO, tags, and image generation. Built with Next.js and Supabase, L4U_Blog is a showcase of full-stack, AI-assisted web development.
+ **L4U\_Blog** project.
 
 ---
 
-## 🛠️ Tech Stack
+````markdown
+# L4U_Blog
 
-- **TypeScript** / JavaScript
-- **Next.js** (React, SSR, routing)
-- **Tailwind CSS** (styling, dark/light mode)
-- **Supabase** (PostgreSQL, Auth, Storage)
-- **react-markdown**, **remark-gfm** (Markdown support)
-- **Gemini CLI** (AI text/image features)
-- **Cursor**, **Træ (TRAE)** (AI code editors)
-- **CodeRabbit** (AI code review)
-- **Jest**, **React Testing Library** (testing)
-- **GitHub**, **Vercel** (deployment)
+**L4U_Blog** is a multi-user blogging platform built for developers and community members to create, share, and discover articles. Designed as a full-stack capstone project, it incorporates modern web development practices along with AI-assisted development tools and workflows.
+
+---
+
+## 🌐 Project Overview
+
+L4U_Blog offers:
+
+- 🧑‍💻 **User Authentication** via Supabase Auth  
+- 📝 **Post Creation & Sharing**: Users can write, publish, and read blog posts  
+- 💬 **Comment System** for community interaction  
+- 🌓 **Dark/Light Mode Toggle** for accessibility  
+- 🧠 **AI-Assisted Development** integrated throughout the stack
+
+This platform supports both knowledge sharing and personal portfolio building, showcasing real-world full-stack engineering and AI-enhanced workflows.
+
+---
+
+## 🧰 Tech Stack
+
+### 🖥 Frontend
+- **Next.js** (React-based framework) for SSR and routing  
+- **Tailwind CSS** for utility-first styling and responsive UI  
+
+### 🗃 Backend / Database
+- **Supabase** (PostgreSQL)  
+  - Authentication via **Supabase Auth**  
+  - Real-time database operations  
+  - Storage for blog content and user metadata  
+
+### 🧠 AI Tools
+- **Cursor** and **Træ** (TRAE): AI-assisted IDEs for writing code via instructions  
+- **Gemini CLI**: Google's AI-powered CLI for generating code and querying the database via natural language  
+- **CodeRabbit**: Automated AI code reviews in GitHub PRs  
+
+### 🧪 Testing
+- **Jest** and **React Testing Library** for unit and integration testing  
+
+### 🚀 Deployment
+- **Vercel** or **Supabase Hosting** for frontend/backend deployment  
+- **GitHub** for version control (Repo: [favour-22/L4U_Blog](https://github.com/favour-22/L4U_Blog))  
 
 ---
 
 ## 🧠 AI Integration Strategy
 
-- **Code & Feature Generation:** Use AI editors (Cursor, Træ) and Gemini CLI to scaffold features, generate models, and routes from natural-language prompts. Context7 ensures up-to-date code and docs.
-- **Testing Support:** Prompt AI to generate Jest/RTL tests for functions and components, covering both success and error scenarios.
-- **Documentation & Comments:** Use AI for docstrings, inline comments, and README updates. Feed code context or API schemas to AI for accurate explanations.
-- **Context-Aware Generation:** Use Context7 and MCP to ground AI in project specifics (file tree, DB schema, OpenAPI spec). Use Gemini CLI to query Supabase schema and generate code based on live DB/API.
+L4U_Blog leverages AI tools across the development lifecycle:
+
+### 🔧 Code & Feature Generation
+- **AI-Powered Prompts** used to generate components, routes, and functions  
+- Example prompt:  
+  > “Generate a Next.js API route `/api/posts/create` that validates inputs and saves the post to Supabase.”
+
+- **Gemini CLI** used for tasks like:
+  - “Create Supabase table schema for blog posts”
+  - “Generate login logic using Supabase Auth”
+
+- **Context7** ensures prompts use the latest API docs and conventions
+
+### 🧪 Testing Support
+- AI generates test cases for:
+  - Authentication workflows  
+  - Blog post creation/validation  
+  - Edge/error cases
+
+- Example prompt:  
+  > “Write Jest tests for loginUser including valid, invalid, and empty credential cases.”
+
+### 🧾 Documentation & Comments
+- Inline documentation and README sections generated using AI  
+- Example:  
+  > “Explain the purpose of this function/module”  
+
+- AI tools keep in-code comments and README updated as development progresses
+
+### 📊 Context-Aware Development
+- **Context7** used to pull accurate docs per library/package  
+- **Model Context Protocol (MCP)** enables AI to query live Supabase schema  
+- Example usage:
+  - “List all columns in `users` table”  
+  - “Generate SQL to fetch posts by a user ID”
+
+- For REST or GraphQL APIs, OpenAPI specs and schemas are provided to the AI to generate client functions
 
 ---
 
-## 🔒 In-Editor & PR Review Tooling
+## 🛠 IDE & Code Review Tooling
 
-- **Cursor/Træ:** AI code completion and feature scaffolding in the editor.
-- **CodeRabbit:** Automated, line-by-line AI reviews for every PR (suggests fixes, generates summaries, and commit messages).
-- **GitHub:** Version control and collaboration; CodeRabbit is connected for PR reviews.
+### ✨ AI-Enabled IDEs
+- **Cursor** and **Træ** provide smart suggestions, code completions, and AI-generated scaffolding
+- Developers can describe functionality, and the IDE will generate corresponding code
 
----
+### 🔍 Pull Request Reviews
+- **CodeRabbit** reviews each PR with:
+  - Line-by-line analysis
+  - Suggestions for fixes or improvements
+  - Summaries of commits and changes
 
-## 📝 Prompting Strategy
+- Reduces review time and improves code quality with AI precision
 
-- **Feature Generation:**
-  > Generate a Next.js API route `/api/posts/create` that handles creating a new blog post. It should validate the input fields (title and content) and save the post to Supabase, returning an error if validation fails.
-- **Testing:**
-  > Write a Jest test suite for the `loginUser` function, covering successful login (valid credentials), incorrect password, and missing fields errors. Mock Supabase Auth calls.
-- **Context-Aware:**
-  > (With Context7) Generate a SQL query to fetch all published posts by a given user from the Supabase schema.
-
----
-
-## 📋 Capstone Planning
-
-- Public GitHub repository: [favour-22/L4U_Blog](https://github.com/favour-22/L4U_Blog)
-- This `README.md` with detailed project plan:
-  - Project header & description
-  - Tech stack
-  - AI integration strategy
-  - In-editor/PR review tooling
-  - Prompting strategy
+### 🔁 GitHub Integration
+- Every PR triggers CodeRabbit analysis
+- Gemini CLI and AI tools suggest commit messages based on the diff
+- Clean, AI-reviewed code pushed with well-written PR summaries
 
 ---
 
-## 📚 References
+## 🧠 Prompting Strategy
 
-- [Cursor: The AI Code Editor](https://github.com/cursor/cursor)
-- [TRAE: Collaborate with Intelligence](https://www.trae.ai/)
-- [Gemini CLI MCP Tutorial](https://medium.com/@joe.njenga/gemini-cli-mcp-tutorial-setup-commands-practical-use-step-by-step-example-b57f55db5f4a)
-- [Context7 MCP Server](https://github.com/upstash/context7)
-- [How to generate unit tests with GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/how-to-generate-unit-tests-with-github-copilot-tips-and-examples/)
-- [Supabase MCP Docs](https://supabase.com/docs/guides/getting-started/mcp)
-- [CodeRabbit: AI Code Reviews](https://www.coderabbit.ai/)
+### Feature Example
+```bash
+"Generate a Next.js API route handler for /api/createPost that accepts title and content, validates them, and inserts a new row into the Supabase posts table."
+````
+
+### Test Example
+
+```bash
+"Write a Jest test suite for the loginUser function, covering successful login, incorrect password, and missing fields errors. Mock Supabase Auth calls."
+```
+
+> By including specific function names, fields, and framework context, we ensure highly relevant AI-generated code and tests.
 
 ---
 
+## 🔮 Future Enhancements
 
-> **Note:** This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
-+1
+* Support for image uploads in blog posts
+* Rich text editor integration (e.g., TipTap or Quill)
+* Enhanced search & tagging system
+* User profiles & follower system
+* AI-generated content recommendations
+
+---
+
+## 📂 Repository
+
+> 🔗 GitHub Repo: [https://github.com/favour-22/L4U\_Blog](https://github.com/favour-22/L4U_Blog)
+
+---
+
+## 🙏 Support the Project
+
+If you find L4U\_Blog useful or inspiring, consider [sponsoring me on GitHub](https://github.com/sponsors/favour-22) to help sustain future open-source work. Your support makes a big difference!
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 📞 Contact
+
+Feel free to reach out or contribute via issues and pull requests on the GitHub repo.
+
+---
+```
